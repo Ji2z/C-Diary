@@ -1,28 +1,27 @@
+#pragma once 
 #include "Diary.h"
+#include "DiaryF.h"
 
 
 void GetDairy() {
-	char wh, em[10];
+	char wh, em;
 	char letter[500];
 	char filename[20];
 	Date date;
 	Emotion emotion;
 
-	cout << "³¯Â¥(YYYY MM DD): ";
+	cout << "ë‚ ì§œ(YYYY MM DD): ";
 	cin >> date.year >> date.month >> date.day;
-	//cout << date.year<< endl;
-	//cout << date.month<<endl;
-	//cout << date.day<<endl;
-	cout << "³¯¾¾: ";
+	cout << "ë‚ ì”¨: ";
 	cin >> wh;
-	cout << "°¨Á¤(±â»Ý, ¼³·½, ½½ÇÄ, È­³², ¹«·á): ";
-	cin.getline(em, 10);
+	cout << "ê°ì •(ê¸°ì¨:H, ì„¤ë ˜:J, ìŠ¬í””:S, í™”ë‚¨:A, ë¬´ë£Œ:B): ";
+	cin >> em;
 	emotion.GetEmotion(em);
 	
 	MakeDir(filename, date.year, date.month);
 
-	cout << "ÀÏ±â¸¦ ÀÔ·ÂÇÏ¼¼¿ä." << endl;
-	cin.getline(letter, 500, '³¡');
+	cout << "ì¼ê¸°ë¥¼ ìž…ë ¥í•˜ì„¸ìš”." << endl;
+	cin.getline(letter, 500, 'ë');
 
 	WriteTxt(date.year, date.month, date.day, letter);
 	
