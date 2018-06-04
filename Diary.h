@@ -20,48 +20,28 @@ class Emotion {
 	int angry{ angry = 0 };
 	int boring{ boring = 0 };
 public:
-	void GetEmotion(char em[10]);
+	inline void GetEmotion(char em) {
+		char em1;
+		if (em == 'H')
+			happy++;
+		else if (em == 'J')
+			joyth++;
+		else if (em == 'S')
+			sad++;
+		else if (em == 'A')
+			angry++;
+		else if (em == 'B')
+			boring++;
+		else {
+			cout << "ë‹¤ì‹œ ìž…ë ¥í•˜ì„¸ìš”.";
+			cin >> em1;
+			GetEmotion(em1);
+		}
+	};
 };
-void Emotion::GetEmotion(char em[10]) {
-	char em1[10];
-	if (em == "±â»Ý") {
-		happy++;
-		//return happy;
-		//exit;
-	}
-	else if (em == "¼³·½") {
-		joyth++;
-		//return joyth;
-		//exit;
-	}
-	else if (em == "½½ÇÄ") {
-		sad++;
-		//return sad;
-		//exit;
-	}
-	else if (em == "È­³²") {
-		angry++;
-		//return angry;
-		//exit;
-	}
-	else if (em == "¹«·á") {
-		boring++;
-		//return boring;
-		//exit;
-	}
-	else {
-		cout << "´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.";
-		cin.getline(em1, 10);
-		GetEmotion(em1);
-	}
-}
+
 class Diary {
 public:
 	Emotion emotion;
 	Date date;
 };
-
-int main();
-void GetDairy();
-void WriteTxt(string name1, string name2, string name3, string text);
-void MakeDir(char filename[20], char *year, char* month);
