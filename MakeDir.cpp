@@ -1,6 +1,7 @@
 #include "Diary.h"
+#include "DiaryF.h"
 
-void MakeDir(char filename[20], char *year, char* month) {// Æú´õ»ý¼º(ex.2018.06)
+void MakeDir(char filename[20], char *year, char* month) {// Ã†ÃºÂ´ÃµÂ»Ä±Â¼Âº(ex.2018.06)
 	strcat(filename, year);
 	strcat(filename, ".");
 	strcat(filename, month);
