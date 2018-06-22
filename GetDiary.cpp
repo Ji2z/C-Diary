@@ -17,8 +17,6 @@ void GetDairy() {
 	cout << "감정(기쁨:H, 설렘:J, 슬픔:S, 화남:A, 무료:B): ";
 	cin >> em;
 	emotion.GetEmotion(em);
-	
-	MakeDir(filename, date.year, date.month);
 
 	cout << "일기를 입력하세요." << endl;
 	cin.getline(letter, 500, '끝');
